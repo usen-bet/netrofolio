@@ -1,5 +1,4 @@
 import "./Styles/Blog.scss"
-import "./Styles/blog.scss"
 import "./Styles/blogdeets.scss"
 import useFetch from "../hooks/useFetch"
 import Netrologo from "../assets/NETROPEDIA LOGO.png"
