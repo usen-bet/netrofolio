@@ -5,7 +5,10 @@ import { BiChevronLeft } from "react-icons/bi"
 
 function Blogdeets() {
   const { id } = useParams()
-  const STRAPI_URL = "http://localhost:1337"
+  const STRAPI_URL = import.meta.env.VITE_STRAPI_URL
+
+  console.log("STRAPI_URL:", STRAPI_URL)
+  console.log("FETCH URL:", `${STRAPI_URL}/api/articles?populate=*`)
 
   const { loading, error, data } = useFetch(
     `${STRAPI_URL}/api/articles?populate=*`
@@ -33,17 +36,22 @@ function Blogdeets() {
   const title = article?.articletitle || "Untitled"
   const body = article?.articlebody || []
 
-  const articleImg = article?.articleimage?.[0]?.url || null
+  const imagePath =
+    article?.articlecover?.url ||
+    article?.articleimage?.[0]?.url ||
+    null
 
-  const coverUrl = articleImg
-    ? articleImg.startsWith("http")
-      ? articleImg
-      : `${STRAPI_URL}${articleImg}`
+  const coverUrl = imagePath
+    ? imagePath.startsWith("http")
+      ? imagePath
+      : `${STRAPI_URL}${imagePath}`
     : null
 
   return (
     <div className="blog-details">
-      <Link to="/" className="goback"><BiChevronLeft className="chevy"/></Link>
+      <Link to="/" className="goback">
+        <BiChevronLeft className="chevy" />
+      </Link>
 
       <div className="article">
         <div className="article-img">
