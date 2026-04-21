@@ -1,13 +1,10 @@
 import "./Styles/Contact.scss"
-import Navbar from "../components/Navbar"
-import contactimg from "./Images/Tablet/contact-img.png"
 import { Pop } from "../components/Animation/Pop"
-import { RiTwitterXLine } from "react-icons/ri";
-import { FaWhatsapp, FaTelegram } from "react-icons/fa";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRef} from 'react';
 import emailjs from '@emailjs/browser';
+import scroll from "../assets/Desktop/scroll.png"
 
 function Contact() {
 
@@ -37,26 +34,21 @@ const sendEmail = (e) => {
 
   return (
     <div className="Contact-page">
-      <Navbar />
-      <h1><Pop>Contact Me</Pop></h1>
        <div className="form-box">
+        <h1 className="conn"><Pop>Let's Connect</Pop></h1>
          <form action="" ref={form} className="form" onSubmit={sendEmail}>
+         <p> Fill out the form below and I’ll reach out personally. <br /> Can’t wait to hear from you. </p>
          <input type="text" name="to_name" placeholder="Name" />
          <input type="text" name="from_name" placeholder="Email"/> 
          <textarea cols="30" rows="10" className="message" name="message" placeholder="Message"></textarea>
-         <button type="submit" value="Send" onClick={onSubmit} className="btn-form">Send</button>
+         <button type="submit" value="Send" onClick={onSubmit} className="btn-form">Send Message</button>
          <ToastContainer
           theme="dark"
           position="top-center"
          />
          </form>
-         <img src={contactimg} alt="" className="img-contact"/>
        </div>
-       <div className="g-connect">
-       <div className="connect"><a href="https://x.com/netrovertHQ"><RiTwitterXLine className="black"/></a></div>
-       <div className="connect"><a href="http://t.me/netrovert1"><FaTelegram className="black"/></a></div>
-       <div className="connect"><a href="http://wa.me/+2348084396896"><FaWhatsapp className="black"/></a></div>
-       </div>
+       <img src={scroll} alt="scroll" className="scroll"/>
     </div>
   )
 }

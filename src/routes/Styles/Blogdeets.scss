@@ -1,0 +1,78 @@
+.blog-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to top, #51237E, #710AD5);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 0px 300px;
+}
+
+.article {
+    padding-top: 120px;
+    padding-left: 30px;
+    padding-right: 30px;
+        p {
+        text-align: center;
+        color: white;
+        
+    }
+    h1 {
+        padding-top: 50px;
+        padding-bottom: 30px;
+        color: white;
+        line-height: 1.4;
+    }
+    p {
+        line-height: 1.5;
+    }
+
+}
+
+.words {
+        text-align: center;
+        color: white; 
+        padding-bottom: 150px;   
+}
+
+.articlehead {
+    justify-content: center;
+    display: flex;
+    text-align: center;
+
+}
+
+.art-img {
+    width: 70vw;
+
+}
+
+.goback {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    color: white;
+
+}
+
+.chevy {
+    font-size: 50px;
+    width: 40px !important;
+    height:40px !important;
+}
+
+.bloghalf {
+    height: 600px;
+    overflow: hidden;
+}
+
+.bloghalf1 {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    
+}

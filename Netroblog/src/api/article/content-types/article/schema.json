@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "Article"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "articlecover": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "articletitle": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "articlebody": {
+      "type": "blocks",
+      "required": true
+    },
+    "articleimage": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "articlebody2": {
+      "type": "blocks"
+    },
+    "articleimage2": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "articlebody3": {
+      "type": "blocks"
+    },
+    "author": {
+      "type": "string",
+      "default": "Netrovert",
+      "required": true
+    },
+    "articleimage3": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

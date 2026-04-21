@@ -1,0 +1,133 @@
+$breakpoints: (
+    "smob": "(max-width: 650px)",
+    // "mob": "(min-width:421px) and (max-width:652px)",
+    "hero": "(min-width:540px) and (max-width:652px)",
+    "sstab": "(min-width:559px) and (max-width:652px)",
+    "stab": "(min-width:653px) and (max-width:744px)",
+    "tab": "(min-width:744px) and (max-width:1000px)",
+    "sdesk": "(min-width:1001px) and (max-width:1500px)",
+    "desk": "(min-width:1501px) and (max-width:2000px)",
+    "acc": "(max-width:1250px)",
+    "thatoneimg": "(min-width: 2792px)",
+    "longlist": "(max-width: 719px)",
+    "bgish" : "(max-width: 1438px)"
+);
+
+:root {
+  --text-base: clamp(14px, 5vw, 18px);
+  --text--bigger-base: clamp(18px, 5vw, 20px);
+  --text-display-base: clamp(36px, 5vw, 96px); 
+}
+
+.Blogproject{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--sec-color);
+    width: 100vw;
+    height: 100vh;
+    overflow: none;
+    background: url(../../assets/Desktop/Desktop2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: start;
+    padding-top: 150px;
+    position: relative;
+}
+
+.Blogproject1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--sec-color);
+    width: 100vw;
+    overflow: none;
+    background: linear-gradient(to bottom, #FF6F02, #FFD207);
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: start;
+    padding-top: 120px;
+    position: relative;
+}
+
+.bloghalf1{
+    display: flex;
+    gap: 40px;
+}
+
+.bloghalf{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;    
+}
+
+.articletitle {
+    cursor: pointer;
+    font-size: var(--text-base);
+    padding-top: 10px;
+    text-align: start;
+}
+
+.img {
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.imgg1 {
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.netropedia {
+  height: 100vh;  
+}
+
+.purple-btn {
+    color: white;
+    width: 160px;
+    height: 50px;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transform: scale(1.0);
+    transition: all 0.2s ease-in-out;
+    font-size: var(--text-base);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top, #51237E, #710AD5);
+    &:hover {
+        transform: scale(1.04);
+    }
+}
+
+.purp-btn {
+    outline: none;
+    border: none;
+    color: white;
+    background:transparent;
+    width: 160px;
+    height: 50px;
+    position: absolute;
+    bottom: 30px;    
+}
+
+.Netropedia-title {
+
+}
+
+.purpp {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+
+}
+
+.article-img {
+    
+}

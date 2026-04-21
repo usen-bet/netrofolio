@@ -23,51 +23,72 @@ $breakpoints: (
   }
 };
 
+:root {
+  --text-base: clamp(14px, 1.2vw, 18px);
+  --text--bigger-base: clamp(18px, 5vw, 20px);
+  --text-display-basee: clamp(36px, 4vw, 80px); 
+}
+
 .Contact-page {
-    background-color: var(--sec-color);
+    // background-color: var(--sec-color);
+    position: relative;
     width: 100vw;
     height: 100vh;
-    background-image: url(../Images/Desktop/contact-bg.png);
     background-repeat: no-repeat;
     background-position: left center;
     align-items: center;
     display: flex;
     flex-direction: column;
 
+    p {
+      font-family: bricmed;
+      color: white ;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
     h1 {
-      font-family: jetbrains;
-      font-size: 48px;
-      position: relative;
-      top: 90px;
-      @include breakpoint(sdesk) {
-        font-size: 80px; 
-        top: 60px;
-      }
-      @include breakpoint(desk) {
-        font-size: 80px; 
-        top: 60px;
-      }
-      @include breakpoint(maxtab) {
-        font-size: 64px;
-        top: 60px;
-      }
-      @include breakpoint(smob) {
-        font-size: 48px;
-      }
+      font-family: bricmed;
+      font-size: 32px;
+      display: flex;
+      margin-bottom: 15px;
+      // justify-content: center;
+      // position: relative;
+      // top: 90px;
+      // @include breakpoint(sdesk) {
+      //   font-size: 80px; 
+      //   top: 60px;
+      // }
+      // @include breakpoint(desk) {
+      //   font-size: 80px; 
+      //   top: 60px;
+      // }
+      // @include breakpoint(maxtab) {
+      //   font-size: 64px;
+      //   top: 60px;
+      // }
+      // @include breakpoint(smob) {
+      //   font-size: 48px;
+      // }
     }
 }
 
 .form-box {
-    background-color: var(--pri-color);
-    height: 459px;
+    background: linear-gradient(to bottom, #51237E, #933FE4);
+    // background-color: var(--pri-color);
+    height: fit-content;
     display: flex;
     flex-direction: column;
     width: 60vw;
     max-width: 550px;
     margin: auto;
     border-radius: 10px;
+    padding: 25px 45px;
+    z-index: 100;
+    position: inherit;
+    top: 120px;
     @include breakpoint(smob) {
-      width: 85vw; 
+      width: 85vw;
     }
     @include breakpoint(mob) {
       width: 80vw;
@@ -84,7 +105,7 @@ $breakpoints: (
     }
     color: #A8A8A8;
     padding-left: 10px;
-    width: 80%;
+    width: 100%;
     height: 36px;
     margin-bottom: 20px;
     outline: none;
@@ -96,7 +117,7 @@ $breakpoints: (
      color: #A8A8A8;
      padding-left: 10px;
      padding-top: 10px;
-     width: 80%;
+     width: 100%;
      margin-bottom: 30px;
      resize: none;
      outline: none;
@@ -105,7 +126,7 @@ $breakpoints: (
   }
 
   button {
-    background-color: var(--pri-color);
+    background-color: var(--pri-color) !important;
     width: 30px;
     height: 30px;
     margin: auto;
@@ -113,7 +134,12 @@ $breakpoints: (
     display: flex ;
     align-items: center;
     justify-content: center;
+    
   }
+}
+
+.conn{
+  font-size: var(--text-display-basee) !important;
 }
 
 .btn-form {
@@ -121,8 +147,10 @@ $breakpoints: (
   outline: none;
   border-radius: 10px;
   cursor: pointer;
-  width: 100px !important;
+  width: 100% !important;
   height: 36px !important;
+  background-color: var(--sec-color) !important;
+  color: white;
   background-color: var(--sec-color) !important;
 }
 
@@ -154,18 +182,15 @@ $breakpoints: (
   width: 60px;
   height: 50px;
   background-color: var(--pri-color);
-  border: 1px solid black;
-  border-top-left-radius:10px ;
-  border-bottom-left-radius:10px ;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: all 0.2s ease;
-  &:hover {
-    transform: translateX(-5px);
-    cursor: pointer;
-  }
+  // &:hover {
+  //   transform: translateX(-5px);
+  //   cursor: pointer;
+  // }
 
   @include breakpoint(icon-fix) {
     width: 40px;

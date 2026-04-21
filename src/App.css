@@ -18,12 +18,53 @@
   src: url(./fonts/TafelSansPro-RegularIt.ttf);
 }
 
+@font-face {
+  font-family: Popreg;
+  src: url(./fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: poplit;
+  src: url(./fonts/Poppins-Light.ttf);
+}
+
+@font-face {
+  font-family: Bricmed;
+  src: url(./fonts/BricolageGrotesque-Light.ttf);
+}
+
+@font-face {
+  font-family: Bricextra;
+  src: url(./fonts/BricolageGrotesque-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: Bricreg;
+  src: url(./fonts/BricolageGrotesque-Medium.ttf);
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0px;
+}
+
+/* p {
+  font-family: poplit;
+} */
+
+input::placeholder {
+  font-family: bricmed;
+}
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: white;
-  font-family: Jetbrains;
+  font-family: bricmed;
+}
+
+/*
+small {
+  line-height: 85.5%;
 }
 
 a {
@@ -32,11 +73,16 @@ a {
 
 h1 {
   font-family: Tafel;
-}
+} */
 
 .center {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
+}  
+
+svg {
+  width: 30px !important;
+  height: 30px !important;
 }

@@ -1,13 +1,16 @@
 $breakpoints: (
-    "smob": "(max-width: 420px)",
-    "mob": "(min-width:421px) and (max-width:652px)",
+    "smob": "(max-width: 650px)",
+    // "mob": "(min-width:421px) and (max-width:652px)",
     "hero": "(min-width:540px) and (max-width:652px)",
     "sstab": "(min-width:559px) and (max-width:652px)",
     "stab": "(min-width:653px) and (max-width:744px)",
     "tab": "(min-width:744px) and (max-width:1000px)",
     "sdesk": "(min-width:1001px) and (max-width:1500px)",
     "desk": "(min-width:1501px) and (max-width:2000px)",
-    "acc": "(max-width:1250px)"
+    "acc": "(max-width:1250px)",
+    "thatoneimg": "(min-width: 2792px)",
+    "longlist": "(max-width: 719px)",
+    "bgish" : "(max-width: 1438px)"
 );
 
 @mixin breakpoint($user-value) {
@@ -21,64 +24,442 @@ $breakpoints: (
     }
 };
 
+section {
+    @include breakpoint(smob) {
+        height: fit-content !important;
+    }
+}
+
+a {
+    text-decoration: none;
+
+}
+
+h1 {
+    font-size: var(--text-display-base) !important;
+}
+
+main {
+    overflow: hidden;
+}
+
+p {
+  font-size: clamp(14px, 16px, 18px) ;
+  line-height: 1.4;
+  margin:0px; 
+}
+
+h2 {
+    font-size: var(--text--bigger-base);
+}
+
+.navb {
+  position: relative;
+}
+
+.bar{
+    z-index: 10000000000;
+    position: absolute;
+}
+
+.scroll {
+    width: 100vw;
+    display: flex;
+    justify-self: center;
+    transform: translateY(-110px);
+    @include breakpoint(tab) {
+       transform: translateY(-70px) !important; 
+    }
+    @include breakpoint(smob) {
+       transform: translateY(-50px) !important; 
+    }
+        @include breakpoint(sdesk) {
+       transform: translateY(-50px) !important; 
+    }
+}
+
 .project-head{
     overflow: hidden;
+    position: relative;
     width: 100vw;
     height: 100vh;
     background-color: var(--pri-color);
-    background-image: url(./assets/Mobile/bg-dashboard.png);
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+
     @include breakpoint(stab) {
-        background-image: url(./assets/Tablet/bg-dashboard.png);
+        background-image: url(./assets/Desktop/Desktop2.png);
+        background-position: center;    
     }
     @include breakpoint(tab) {
-        background-image: url(./assets/Desktop/bg-hero-mid-desk.png);
+        background-image: url(./assets/Desktop/Desktop2.png);
+        background-position: center;    
     }
     @include breakpoint(sdesk) {
-        background-image: url(./assets/Desktop/bg-hero-mid-desk.png);
+        background-image: url(./assets/Desktop/Desktop2.png);
+        background-position: center;    
     }
     @include breakpoint(desk) {
-        background-image: url(./assets/Desktop/bgherobigdesk.png);
+        background-image: url(./assets/Desktop/Desktop2.png);
+        background-position: center;        
+    }
+    @include breakpoint(smob) {
+        background-image: url(./assets/Desktop/Desktop2.png);
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+:root {
+  --text-base: clamp(14px, 1.2vw, 18px);
+  --text--bigger-base: clamp(18px, 5vw, 20px);
+  --text-display-base: clamp(36px, 5vw, 96px); 
+}
+
+p {
+  font-size: var(--text-base);
+  line-height: 1.4;
+}
+
+.sticky-wrap {
+    overflow: hidden;
+}
+
+//IMAGE
+
+.table-pic {
+    width: 103vw;
+    position: absolute ;
+    bottom: -30px;
+    display: flex;
+    justify-content: center;
+}
+
+.table-obj {
+    width: 100%;
+     @include breakpoint(sdesk) {
+        // display: none;
+    }
+    @include breakpoint(acc) {
+       display: none;
+    }
+}
+
+// .link {
+//     font-size: 60px;
+// }
+
+.table-obj1 {
+    width: 100%;
+    position: relative;
+    bottom: 1050px;
+        @include breakpoint(sdesk) {
+        display: none;
+    }
+    @include breakpoint(acc) {
+       display: none;
+    }
+}
+
+.tabbg {
+    display: none;
+    width: 110%;
+    position: absolute;
+    bottom: -100px;
+    @include breakpoint(smob) {
+        display: none !important;
+
+    }
+    @include breakpoint(stab) {
+    bottom: -50px;        
+        
+    }
+    @include breakpoint(acc) {
+        display: block;
     }
 }
 
 //Write-up
+
+.hero-body {
+    // position: relative;
+    padding-top: 280px;
+    // left: 175px;
+    padding-left: 13.8%;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    @include breakpoint(smob) {
+        padding-left: 20px;
+        padding-right: 20px;
+
+    }
+
+    p {
+        font-size: var(--text--bigger-base);
+        line-height: 1.3em;
+        margin: 0px;
+        font-size: white;
+        @include breakpoint(smob) {
+            text-align: center;
+
+        }
+    }
+}
+
+.title {
+    font-family: bricmed;
+    font-size: 96px;
+    line-height: 86.5%;
+    font-weight: 620;
+    color: white;
+    margin: 0px;
+    font-size: var(--text-display-base);
+    @include breakpoint(smob) {
+        text-align: center;
+    }
+}
+
+.btn-container {
+    display: flex;
+    gap: 14px;
+    @include breakpoint(smob) {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        justify-self: center;
+        width: 100%;
+
+    }    
+}
+
+.hero-btn {
+    background-color: #51237E;
+    outline: none;
+    border: none;
+    font-size: 24px;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    color: white;
+    &:hover {
+        background-color: #9f62db;
+    }
+    font-size: var(--text-base);
+}
+
+.orange {
+    color: #EA7224;
+    margin-left: 13.8%;
+    margin-top: 172px;
+    @include breakpoint(smob) {
+        margin: 0px;
+    } 
+}
+
+.aboutnetro {
+    background: linear-gradient(to bottom, #51237E, #710AD5);
+    height: fit-content;
+    width: 100vw;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    padding-right: 100px;
+    @include breakpoint(smob) {
+        align-items: center;
+        justify-content: center;
+        margin: 0px; 
+        padding: 150px 20px ;
+        height: 100vh !important;
+        
+    }
+    @include breakpoint(stab) {
+        height: 100vh;
+    }
+    // transform: translateY(-20px);
+}
+
+.aboutwrite {
+    font-size: 24px;
+    line-height: 31.2px;
+    width: 588px;
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 13.8%;
+    p {
+        margin: 0px;
+        color: white;
+        font-size: var(--text--bigger-base);
+    }
+    @include breakpoint(smob) {
+        width: 100%;
+        margin: 0px;
+        text-align: center;
+
+    }
+}
+
+.gojo {
+    width: 350px;
+    position: relative;
+    left: 76%;
+    top: -130px;
+    @include breakpoint(smob) {
+        display: none;
+
+    }
+    @include breakpoint(stab) {
+        display: none;
+    }
+}
+
+.workexp {
+    height: 1000px;
+    width: 100vw;
+    // background-image: url(./assets/Desktop/Desktop2.png);
+    background: linear-gradient(to bottom, #710AD5, #51237E);
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+}
+
+.logoxp {
+    width: 85px;
+    height: 85px;
+}
+
+.track {
+    display: flex;
+    gap: 40px;
+}
+
+.card {
+    max-height: 700px;
+    display: flex;
+    flex-direction: column;
+    color: black !important;
+    background-color: white;
+    border-radius: 10px;
+    width: 400px;
+    display:flex ;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    padding: 40px 20px;
+        @include breakpoint(smob) { 
+            width: 90vw; 
+        }
+}
+
+.card-head {
+    display: flex;
+    background-color: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 5px;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 22px;
+    width: 100%;
+}
+
+.card-container {
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    background: transparent;
+    gap: 10px;
+    // overflow-x: scroll;
+    left: 175px;
+    position: relative;
+}
+
+.card-title {
+    font-family: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: bricmed;
+    color: #8a8a8a;
+    font-size: var(--text--bigger-base) !important;
+}
+
+.card-deets {
+    color: #51237E;
+    line-height: 85.5%;
+    font-size: 20px;
+    flex-wrap: wrap;
+    display: flex;
+    font-family: poplit;
+    font-weight: 600;
+}
+
+.card-body {
+    width: 100%;
+    background-color: white;
+    height: calc(100% - 40px);
+    overflow-y: scroll;
+    font-family: poplit;
+    li {
+     width: 338px;
+     position: relative;
+     left: 13px; 
+     margin: 12px 8px;
+     font-size:16px;
+     line-height: 1.4em;
+     width: calc(100% - 24px);
+     ul {
+        padding: 0px 0px 0px 10px ;
+        margin: 10px 0px ;
+     }
+    }
+    h2 {
+        font-size: 16px;
+        line-height: 1.3em;
+        margin: 0px;
+    }
+}
+
+.no-margin {
+    margin: 0px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c5c5c5;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .top-heading{
     z-index: 10000;
     text-align: center;
     margin-top: 43px;
     position: relative;
-    p {
-       font-size: 12px; 
-       @include breakpoint(mob) {
-        font-size: 14px;
-       }@include breakpoint(sstab) {
-        font-size: 18px;
-       }
-       @include breakpoint(stab) {
-        font-size: 18px;
-       }
-       @include breakpoint(tab) {
-        font-size: 24px;
-       }
-       @include breakpoint(sdesk) {
-        font-size: 24px;
-       }
-       @include breakpoint(desk) {
-        font-size: 24px;
-       }
-    }
     h2 {
       font-size: 32px; 
       position: relative;
       top: 20px;
       display: flex;
       justify-content: center;
-      @include breakpoint(mob) {
-        font-size: 36px;
-       }
        @include breakpoint(stab) {
         font-size: 36px;
        }
@@ -101,6 +482,17 @@ $breakpoints: (
             font-size: 96px;
         }
     }
+}
+
+.nav-bar{
+    width: 100vw;
+    justify-content: center;
+    display: flex;
+    position: fixed;
+    top: 37px;
+    padding: 12px, 8px;
+    height: 51px;
+    z-index: 20000000000;
 }
 
 .box {
@@ -132,9 +524,9 @@ $breakpoints: (
 .spec {
     display: flex;
     align-items: center;
-    @include breakpoint(mob) {
-        margin: 0px 5px;
-    }
+    // @include breakpoint(mob) {
+    //     margin: 0px 5px;
+    // }
     @include breakpoint(stab) {
         margin: 10px;
     }
@@ -160,67 +552,6 @@ $breakpoints: (
 }
 
 //Image//
-.hero {
-    background-repeat: no-repeat;
-    background-position: center;
-    object-fit: cover;
-    background-size: cover;
-    @include breakpoint(smob) {
-        width: 100vw;
-        height: 500px;
-        position: absolute;
-        bottom: 0px;
-        background-image: url(./assets/Mobile/Hero.png);
-    }
-    @include breakpoint(mob) {
-        width: 100vw;
-        height: 500px;
-        position: absolute;
-        bottom: 0px;
-        background-image: url(./assets/Tablet/Hero-home.png);
-        background-size: cover;
-    }
-    @include breakpoint(stab) {
-        width: 100vw;
-        height: 500px;
-        position: absolute;
-        bottom: 0px;
-        background-image: url(./assets/Tablet/Hero-home.png);
-        background-size: contain;
-    }
-    @include breakpoint(hero) {
-        width: 100vw;
-        height: 600px;
-        position: absolute;
-        bottom: 0px;
-        background-image: url(./assets/Tablet/Hero-home.png);
-        background-size: contain;
-    }
-    @include breakpoint(tab) {
-        width: 100vw;
-        height: 560px;
-        position: absolute;
-        bottom: 0px;
-        background-image: url(./assets/Tablet/Hero-home.png);
-        background-size: contain;
-    }
-    @include breakpoint(sdesk) {
-        width: 100vw;
-        height: 560px;
-        position: absolute;
-        bottom: 0px;
-        background-image: url(./assets/Tablet/Hero-home.png);
-        background-size: contain;
-    }
-    @include breakpoint(desk) {
-        width: 100vw;
-        height: 530px;
-        position: absolute;
-        bottom: 0px;
-        background-image: url(./assets/Desktop/Hero.png);
-        background-size: contain;
-    }
-}
 
 .link1 {
     cursor: pointer;
@@ -260,7 +591,7 @@ $breakpoints: (
 
 .font {
     font-family: Tafel;
-}d
+}
 
 .Accolades {
     width: 474px;
@@ -289,6 +620,7 @@ $breakpoints: (
     animation-fill-mode: forwards;
     li {
       list-style: circle;  
+
     }
     @include breakpoint(acc) {
         display: none;
@@ -318,3 +650,728 @@ $breakpoints: (
         transform: translateX(0px);
     }
   } 
+
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #111;
+  background: #f6f3ee;
+}
+
+main {
+  width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.container.narrow {
+  width: min(760px, calc(100% - 48px));
+}
+
+.hero,
+.intro,
+.features,
+.footer-block {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding: 80px 0;
+}
+
+.hero {
+//   background: #111;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  line-height: 0.95;
+  margin: 0 0 20px;
+  max-width: 900px;
+}
+
+.lead {
+  font-size: 1.1rem;
+  max-width: 640px;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+  opacity: 0.7;
+}
+
+.horizontal-section { 
+//   padding-top: 100px !important;
+  position: relative;
+  height: 100vh !important;
+  background: #d9d2c3;
+  overflow: hidden;
+  background: linear-gradient(to top, #51237E, #710AD5);
+  padding-left: 0px !important;
+  position: relative;
+  overflow: hidden;
+   @include breakpoint(smob) { 
+        gap: 40px;
+        display: flex;
+        flex-direction: column;
+
+    }
+}
+
+.word-title {
+    font-size: var(--text-display-base);
+
+    line-height: 85.8%; 
+    color: white;
+    font-family: bricmed;
+    padding-left: 13.6%;
+    padding-bottom: 60px;
+    margin-top: 200px;
+    @include breakpoint(smob) {
+        margin: 0px;
+        padding-top: 150px !important;
+        padding: 0px;
+        justify-self: center;
+        display: flex;
+        text-align: center;
+
+    }
+}
+
+.word-title1 {
+    font-size: var(--text-display-base);
+    line-height: 85.8%; 
+    color: white;
+    font-family: bricmed;
+    // width: 100vw !important;
+    @include breakpoint(smob) { 
+        text-align: center;
+    }
+}
+
+.sticky-wrap{
+    padding: 0px 20px;
+}
+
+.track {
+  display: flex;
+  height: 100vh;
+  width: max-content;
+  will-change: transform;
+  padding: 0px 20px;
+}
+
+.title-write{
+    color: #F8D200;
+    font-size: 36px;
+    line-height: 1.4;
+    font-family: bricextra;
+
+}
+
+.mid-title {              
+    color: white;
+    font-family: bricextra;
+    font-size: 32px;
+    line-height: 1.3; 
+    @include breakpoint(smob) {
+        font-size: var( --txet-bigger-case) ;
+    }  
+}
+
+.yellow {
+    color: #F8D200;
+}
+
+.features {
+    display: block;
+    // background-image: ;
+    background: url(./assets/Desktop/Narutosummon.png), linear-gradient(to bottom, #51237E, #710AD5);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    width: 100%;
+    @include breakpoint(thatoneimg) {
+        background-size: cover;
+    }
+    @include breakpoint(bgish) {
+        background-size: contain;
+    }
+}
+
+.padding {
+    padding-left: 13.8%;
+     @include breakpoint(smob) {
+        padding: 0px; 
+     }
+
+}
+
+.listed {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.career-miles {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.career {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    p {
+    font-size: var(--text--bigger-base); 
+    }
+
+    @include breakpoint(smob) {
+        text-align: center;
+    }
+
+}
+
+.career-container {
+    // z-index: 100;
+    position: relative;
+
+}
+
+.carousel {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cardd {
+    width: 350px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+}
+
+.cardd-top{
+    background-color: white;
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    gap: 20px;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+}
+
+.cardd-bottom {
+    background-color: white;
+    padding: 20px; 
+    width: 100%;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+}
+
+.dp{
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+}
+
+.dpp {
+    width: fit-content;
+}
+
+.recommendation, .connect {
+    background: url(./assets//Desktop/Netropedia.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    h1 {
+        color: white;
+        font-size: var(--text-display-base);
+        @include breakpoint(longlist) {
+            text-align: center;
+        }
+        @include breakpoint(stab) { 
+        text-align: center;
+        padding-left: 0px;
+        width: 100%;
+        }
+        @include breakpoint(tab) {
+        padding-left: 0px;
+        width: 100%;  
+        text-align: center; 
+        }
+    }
+    @include breakpoint(longlist) {
+        height: fit-content; 
+    }
+}
+
+.netropedia-title {
+
+
+}
+
+.trustees {
+    height: fit-content;
+    display: flex;
+    gap: 20px;    
+    flex-wrap: wrap;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+h3 {
+    font-size: 24px;
+}
+}
+
+.trusted {
+    gap: 15px;
+    width: fit-content;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+}
+
+.pfp_name, .pfp {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.follow {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+    gap: 20px;
+    padding-bottom: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: auto;
+}
+
+.pfp-pic {
+    width: 50px;
+    height: 50px;
+}
+
+.connect {
+ background: url(assets/Desktop/Desktop2.png);
+ width: 100% !important;
+ justify-self: center;
+ height: fit-content !important; 
+ background-repeat: no-repeat;
+ background-size: cover;  
+border: none;
+outline: none;
+}
+
+.link-holders {
+    width: fit-content;
+    gap: 80px;
+    color: var(--sec-color);
+    z-index: 11;
+    position: relative;
+    top: 240px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-self: center;
+
+    @include breakpoint(smob) {
+    height:fit-content;
+    top: 0px;
+    align-items: center;
+    }
+    @include breakpoint(stab) {
+    height:fit-content;
+    top: 0px;
+    align-items: center;
+    }
+    @include breakpoint(tab) {
+        align-items: center;
+
+    }
+
+}
+
+.link-list1 {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+
+    @include breakpoint(smob) {
+        width: 100%;
+    }
+}
+.Link-list {
+    li {
+        font-size: 60px;
+    }
+}
+
+.caps{
+    font-size: 32px !important;
+    font-family: bricreg !important;
+
+}
+
+.netrovert {
+    width: 100%;
+    height: fit-content; 
+    position: absolute;
+    bottom: 0px;  
+    z-index: 10;
+}
+
+.footpng {
+    width: 100%;
+    position: absolute;
+    bottom: -40px;  
+    @include breakpoint(smob) {
+        bottom: 0px;
+
+
+    }
+}
+
+.letswork {
+    border: 1px white solid;
+    border-radius: 10px;
+    font-size: 32px;
+    background-color: transparent;
+    cursor: pointer;
+    height: 60px;
+    width: 260px;
+    z-index: 11;
+    transition: all 0.2s ease-in-out;
+    &:hover{
+        background-color: var(--sec-color);
+    }
+}
+
+.letswork1 {
+    border: 1px white solid;
+    border-radius: 10px;
+    font-size: 32px;
+    background-color: transparent;
+    cursor: pointer;
+    height: 60px;
+    width: fit-content;
+    color: white;
+    padding: 0px 70px 0px 30px;
+    z-index: 11;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    @include breakpoint(smob) {
+        // width: ;
+        font-size: 24px;
+        padding: 0px 30px 0px 30px;
+
+    }
+    &:hover{
+        background-color: var(--pri-color);
+    }
+}
+
+.icoo {
+    font-size: 16px;
+    font-weight: 200;
+    margin-left: 15px;
+}
+
+.spam {
+    width: 100vw;
+    position: absolute;
+    top: 890px;
+    display: flex;
+    justify-content: center;
+    @include breakpoint(smob) {
+        left: 0px;
+    }
+}
+
+.cta {
+    height: fit-content;
+    position: relative;
+    // top: 240px;
+    z-index: 100;
+
+    button {
+        color: white;
+        font-family: bricreg;
+    }
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    gap: 80px;
+    flex-wrap: wrap;
+
+    li {
+       display: flex;
+       justify-content: center; 
+       font-size: 18px;
+
+    }
+
+}
+
+.linkk {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    :hover {
+        transform: scale(1.03);
+    }
+}
+
+.recommendations{
+    position: relative;
+    background: url(./assets//Desktop/footerbg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    h1 {
+        color: white;
+    }
+}
+
+.recommendationss{
+    position: relative;
+    background: url(./assets//Desktop/footerbg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    h1 {
+        color: white;
+    }
+    @include breakpoint(smob) {
+        height: fit-content;
+        padding-bottom: 200px;
+        padding-top: 100px;
+    } 
+}
+
+.services {
+    height: 100vh;
+    width: 100%;
+    background: url(./assets//Desktop/Desktop2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include breakpoint(stab) {
+        height: fit-content !important;
+        padding-bottom: 100px;
+    }
+    @include breakpoint(tab) {
+        height: fit-content;
+        padding-bottom: 100px;
+    }
+    @include breakpoint(sdesk) {
+        height: fit-content;
+        padding-bottom: 100px;
+    }
+    h1 {
+        padding-top: 220px;
+        @include breakpoint(smob) {
+            padding: 100px 0px 0px 0px;
+
+        }
+        @include breakpoint(tab) {
+            padding-top: 150px;        
+        }
+    }
+}
+
+.service-card{
+    background: linear-gradient(to bottom, #51237E, #933FE4);
+    width: 363px;
+    height: fit-content;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.img-bg {
+    background-image: url(./assets/Desktop//contentwriting.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 163px;
+    border-radius: 10px;
+    position: relative;
+    h2 {
+        font-size: 48px;
+        color: #8100FF;
+        position: absolute;
+        bottom: 0px; 
+
+    }
+}
+
+.position {
+    position: relative;
+    padding-top: 65px;
+    @include breakpoint(smob) {
+        padding-bottom: 100px;
+        gap: 30px;
+    }
+}
+
+.centre {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: start !important;
+}
+
+.icons {
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding-top: 15px;
+    // height: ;
+    // width: 20px !important;
+    // height: 20px !important;
+}
+
+.write-upholder {
+    color: white;
+    // padding: 15px;
+    div {
+        padding-bottom: 20px;
+    }
+
+    button {
+        height: 40px;
+        background-color: var(--sec-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        width: 100%;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+        &:hover{
+            background-color: var(--pri-color);
+        } 
+    }
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.list-disc{
+    line-height: 1.9;
+        // list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+}
+
+.Netrologo {
+    width: 100%;
+    @include breakpoint(smob) {
+        width: 80%;
+    }
+}
+
+.netropedia-title {
+    display: flex;
+    justify-content: center;
+
+}
+
+.article-card {
+    margin-top: 30px;
+    height: fit-content;
+    padding: 10px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to top, #51237E, #710AD5);
+    color: white;
+    justify-content: center;
+    width: 400px;
+    transform: scale(1.0);
+    transition: all 0.2s ease-in-out;
+    &:hover {
+        transform: scale(1.04);
+    }
+}
+
+.bloghalf{
+    width: 100%;
+
+
+}
+
+.purpp {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.article-card {
+    margin-bottom: 20px;
+}
+
+.purp-btn {
+    
+}
+
+.netropedia {
+    position: relative;
+}
+
+.netro-body {
+    display: flex;
+    justify-content: center;
+}
