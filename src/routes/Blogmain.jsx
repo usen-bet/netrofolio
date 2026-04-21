@@ -1,5 +1,5 @@
 import "./Styles/Blog.scss"
-import "./Styles/blogdeets.scss"
+import "./Styles/Blogdeets.scss"
 import useFetch from "../hooks/useFetch"
 import Netrologo from "../assets/NETROPEDIA LOGO.png"
 import { Link } from "react-router-dom"
