@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom"
 import useFetch from "../hooks/useFetch"
-import "./Styles/blogdeets.scss"
+import "./Styles/Blogdeets.scss"
 import { BiChevronLeft } from "react-icons/bi"
 
 function Blogdeets() {
